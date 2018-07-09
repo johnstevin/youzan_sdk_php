@@ -1,9 +1,20 @@
 <?php
 
-namespace Youzan\Open;
+namespace Youzan\SDK\Open;
 
 use Exception;
 
+/**
+ *
+ *
+ * Class      Token
+ *
+ * @license   MIT
+ * @resource  Token
+ * @package   Youzan\SDK\Open
+ * @author    Stevin.john
+ * @email     stevin.john@qq.com
+ */
 class Token
 {
     private $clientId;

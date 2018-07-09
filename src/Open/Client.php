@@ -1,9 +1,20 @@
 <?php
 
-namespace Youzan\Open;
+namespace Youzan\SDK\Open;
 
 use Exception;
 
+/**
+ *
+ *
+ * Class      Client
+ *
+ * @license   MIT
+ * @resource  Client
+ * @package   Youzan\SDK\Open
+ * @author    Stevin.john
+ * @email     stevin.john@qq.com
+ */
 class Client
 {
     private static $requestUrl = 'https://open.youzan.com/api/oauthentry/';

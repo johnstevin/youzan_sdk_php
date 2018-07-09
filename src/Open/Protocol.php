@@ -1,7 +1,18 @@
 <?php
 
-namespace Youzan\Open;
+namespace Youzan\SDK\Open;
 
+/**
+ *
+ *
+ * Class      Protocol
+ *
+ * @license   MIT
+ * @resource  Protocol
+ * @package   Youzan\SDK\Open
+ * @author    Stevin.john
+ * @email     stevin.john@qq.com
+ */
 class Protocol
 {
     const SIGN_KEY = 'sign';

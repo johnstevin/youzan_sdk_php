@@ -1,7 +1,18 @@
 <?php
 
-namespace Youzan\Open;
+namespace Youzan\SDK\Open;
 
+/**
+ *
+ *
+ * Class      Http
+ *
+ * @license   MIT
+ * @resource  Http
+ * @package   Youzan\SDK\Open
+ * @author    Stevin.john
+ * @email     stevin.john@qq.com
+ */
 class Http
 {
     private static $boundary = '';
