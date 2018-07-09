@@ -1,7 +1,6 @@
 {
     "name": "johnstevin/youzan-sdk-php",
     "description": "Youzan Open SDK",
-    "type": "library",
     "keywords": [
         "youzan",
         "youzanyun",
