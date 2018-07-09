@@ -1,0 +1,21 @@
+{
+    "name": "johnstevin/youzan-sdk-php",
+    "description": "Youzan Open SDK",
+    "type": "library",
+    "keywords": [
+        "youzan",
+        "youzanyun",
+        "open-sdk"
+    ],
+    "homepage": "https://github.com/youzan/open-sdk-php",
+    "require": {
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Youzan\\Open\\": "src/Open"
+        }
+    },
+    "minimum-stability": "stable",
+    "license": "MIT"
+}
