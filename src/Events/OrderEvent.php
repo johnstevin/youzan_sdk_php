@@ -16,4 +16,9 @@ namespace Youzan\SDK\Events;
 class OrderEvent
 {
 
+    
+    public function __construct()
+    {
+    }
+
 }
