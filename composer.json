@@ -16,6 +16,5 @@
             "Youzan\\SDK\\": "src/"
         }
     },
-    "minimum-stability": "stable",
     "license": "MIT"
 }
