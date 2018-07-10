@@ -11,6 +11,8 @@ namespace Youzan\SDK;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Container\Container as Application;
 use Illuminate\Foundation\Application as LaravelApplication;
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 
 /**
  *
@@ -23,7 +25,7 @@ use Illuminate\Foundation\Application as LaravelApplication;
  * @author    Stevin.john
  * @email     stevin.john@qq.com
  */
-class YouzanServiceProvider extends ServiceProvider
+class YouzanServiceProvider implements ServiceProviderInterface
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -70,9 +72,9 @@ class YouzanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(Container $pimple)
     {
-        $this->registerSearch();
+        $this->registerBase($pimple);
     }
 
     /**
@@ -85,9 +87,31 @@ class YouzanServiceProvider extends ServiceProvider
         return array();
     }
 
-    protected function registerSearch()
+    protected function registerBase($pimple)
     {
+        $pimple['access_token'] = function ($pimple) {
+            $accessToken = new AccessToken(
+                $pimple['config']['client_id'],
+                $pimple['config']['client_secret'],
+                $pimple['config']->get('kdt_id')
+            );
 
+            $accessToken->setType($pimple['config']['type']);
+
+            return $accessToken;
+        };
+
+        $pimple['api'] = function ($pimple) {
+            return new Api($pimple['access_token']);
+        };
+
+        $pimple['push'] = function ($pimple) {
+            return new Push(
+                $pimple['config']['client_id'],
+                $pimple['config']['client_secret'],
+                $pimple['request']
+            );
+        };
     }
 
 }
