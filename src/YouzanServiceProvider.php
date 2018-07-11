@@ -97,6 +97,7 @@ class YouzanServiceProvider implements ServiceProviderInterface
             );
 
             $accessToken->setType($pimple['config']['type']);
+            $accessToken->setCache($pimple['config']['cache']);
 
             return $accessToken;
         };
