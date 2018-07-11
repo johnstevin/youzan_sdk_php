@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\RedisCache;
+use Youzan\SDK\CacheBridge;
 
 class TestController extends Controller
 {
@@ -22,11 +23,6 @@ class TestController extends Controller
 
     public function getToken ()
     {
-        $cacheDriver = new RedisCache();
-        $redis = new \Redis();
-        $redis->connect('redis', 6379);
-        $redis->select(5);
-        $cacheDriver->setRedis($redis);
         $youzan = new \Youzan\SDK\Youzan([
             'client_id' => 'd4ef476f9cd6dcd3e6',
             'client_secret' => 'c4ffdd2e26325b537a2336aaf675c5f5',
@@ -39,7 +35,7 @@ class TestController extends Controller
                 'level'      => 'debug',
                 'permission' => 0777,
             ],
-            'cache' => $cacheDriver
+            'cache' => new CacheBridge(),
         ]);
 
         // 获取门店信息
