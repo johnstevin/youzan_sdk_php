@@ -10,8 +10,6 @@ namespace Youzan\SDK\Https\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Doctrine\Common\Cache\Cache;
-use Doctrine\Common\Cache\RedisCache;
 use Youzan\SDK\CacheBridge;
 
 class TestController extends Controller
