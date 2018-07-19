@@ -6,7 +6,7 @@
         "youzanyun",
         "open-sdk"
     ],
-    "homepage": "https://github.com/youzan/open-sdk-php",
+    "homepage": "https://github.com/johnstevin/youzan-sdk-php",
     "minimum-stability": "dev",
     "require": {
         "ext-curl": "*"
