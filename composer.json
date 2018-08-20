@@ -9,7 +9,9 @@
     "homepage": "https://github.com/johnstevin/youzan-sdk-php",
     "minimum-stability": "dev",
     "require": {
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "pimple/pimple": "~3.0",
+        "guzzlehttp/guzzle": "~6.2",
     },
     "autoload": {
         "psr-4": {
