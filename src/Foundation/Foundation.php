@@ -65,22 +65,19 @@ class Foundation extends Container
         if (Log::hasLogger()) {
             return;
         }
-
-        $logger = new Logger($this['config']->get('log.name', 'foundation'));
-
+        $logger = new Logger($this['config']->get('log')['name']);
         if (!$this['config']->get('debug') || defined('PHPUNIT_RUNNING')) {
             $logger->pushHandler(new NullHandler());
         } elseif ($this['config']->get('log.handler') instanceof HandlerInterface) {
             $logger->pushHandler($this['config']['log.handler']);
-        } elseif ($logFile = $this['config']->get('log.file')) {
+        } elseif ($logFile = $this['config']->get('log')['file']) {
             $logger->pushHandler(new StreamHandler(
                     $logFile,
-                    $this['config']->get('log.level', Logger::WARNING),
+                    $this['config']->get('log')['level'],
                     true,
-                    $this['config']->get('log.permission', null))
+                    $this['config']->get('log')['permission'])
             );
         }
-
         Log::setLogger($logger);
     }
 
