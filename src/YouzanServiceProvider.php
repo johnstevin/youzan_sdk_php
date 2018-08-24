@@ -27,45 +27,6 @@ use Pimple\ServiceProviderInterface;
  */
 class YouzanServiceProvider implements ServiceProviderInterface
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
-    /**
-     * Boot the service provider.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->setupConfig($this->app);
-        $this->setupMigrations($this->app);
-    }
-
-    /**
-     *
-     * setupConfig
-     *
-     * @param Application $app
-     */
-    protected function setupConfig(Application $app)
-    {
-        $this->mergeConfigFrom(dirname(__DIR__).'/config/youzan.php', 'youzan');
-    }
-
-    /**
-     *
-     * setupMigrations
-     *
-     * @param Application $app
-     */
-    protected function setupMigrations(Application $app)
-    {
-
-    }
 
     /**
      * Register the service provider.
@@ -78,15 +39,11 @@ class YouzanServiceProvider implements ServiceProviderInterface
     }
 
     /**
-     * Get the services provided by the provider.
      *
-     * @return array
+     * registerBase
+     *
+     * @param $pimple
      */
-    public function provides()
-    {
-        return array();
-    }
-
     protected function registerBase($pimple)
     {
         $pimple['access_token'] = function ($pimple) {

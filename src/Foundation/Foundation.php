@@ -12,6 +12,17 @@ use Monolog\Logger;
 use Pimple\Container;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ *
+ *
+ * Class      Foundation
+ *
+ * @license   MIT
+ * @resource  Foundation
+ * @package   Youzan\SDK\Foundation
+ * @author    Stevin.john
+ * @email     stevin.john@qq.com
+ */
 class Foundation extends Container
 {
 
