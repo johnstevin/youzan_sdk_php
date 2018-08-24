@@ -4,6 +4,7 @@ namespace Youzan\SDK;
 
 use Symfony\Component\HttpFoundation\Request;
 use Youzan\SDK\Exception\YouzanException;
+use Youzan\SDK\Foundation\Log;
 
 /**
  *
@@ -48,6 +49,8 @@ class Push
             return;
         }
 
+        Log::debug('Push data:', [$data]);
+
         $this->checkSign($data);
 
         $data['msg'] = json_decode(urldecode($data['msg']), true);
@@ -60,6 +63,7 @@ class Push
         $sign = md5($this->clientId.$data['msg'].$this->secret);
 
         if($sign != $data['sign']){
+            Log::error('Push checkSign error');
             throw new YouzanException('签名不正确');
         }
     }

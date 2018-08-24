@@ -62,4 +62,5 @@ class Youzan extends Foundation
     {
         return $this->api->request($method, $params, $version, $files);
     }
+
 }
