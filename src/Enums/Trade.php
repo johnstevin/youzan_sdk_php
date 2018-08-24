@@ -36,6 +36,33 @@ class Trade
 
     const ORDER_STATUS_TRADE_CLOSED                 = 'TRADE_CLOSED';
 
+    const PUSH_TYPE_TRADE_CREATE                    = 'trade_TradeCreate';
+
+    const PUSH_TYPE_TEADE_CLOSE                     = 'trade_TradeClose';
+
+    const PUSH_TYPE_TRADE_SUCCESS                   = 'trade_TradeSuccess';
+
+    const PUSH_TYPE_TRADE_PARTLYSELLERSHIP          = 'trade_TradePartlySellerShip';
+
+    const PUSH_TYPE_TRADE_SELLERSHIP                = 'trade_TradeSellerShip';
+
+    const PUSH_TYPE_TRADE_BUYERPAY                  = 'trade_TradeBuyerPay';
+
+    const PUSH_TYPE_TRADE_MEMOMODIFIED              = 'trade_TradeMemoModified';
+
+    /**
+     * @var array
+     */
+    public static $pushTypeMap = [
+        self::PUSH_TYPE_TRADE_CREATE        => '交易创建',
+        self::PUSH_TYPE_TEADE_CLOSE         => '交易关闭',
+        self::PUSH_TYPE_TRADE_SUCCESS       => '交易成功',
+        self::PUSH_TYPE_TRADE_PARTLYSELLERSHIP  => '卖家部分发货',
+        self::PUSH_TYPE_TRADE_SELLERSHIP        => '卖家发货',
+        self::PUSH_TYPE_TRADE_BUYERPAY          => '买家付款',
+        self::PUSH_TYPE_TRADE_MEMOMODIFIED      => '卖家修改交易备注',
+    ];
+
     /**
      * @var array
      */
