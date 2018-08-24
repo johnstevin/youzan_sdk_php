@@ -20,10 +20,6 @@ use Youzan\SDK\Foundation\Foundation;
  * @package   Youzan\SDK
  * @author    Stevin.john
  * @email     stevin.john@qq.com
- *
- * @property \Youzan\SDK\Api                $api
- * @property \Youzan\SDK\AccessToken        $access_token
- * @property \Youzan\SDK\Push               $push
  */
 class Youzan extends Foundation
 {
