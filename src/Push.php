@@ -49,11 +49,13 @@ class Push
             return;
         }
 
+        Log::debug('Push data:', $data);
+
         $this->checkSign($data);
 
         $data['msg'] = json_decode(urldecode($data['msg']), true);
 
-        Log::debug('Push data:', $data);
+        Log::debug('Push data for decode:', $data);
 
         return $data;
     }
