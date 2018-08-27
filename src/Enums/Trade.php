@@ -50,6 +50,8 @@ class Trade
 
     const PUSH_TYPE_TRADE_MEMOMODIFIED              = 'trade_TradeMemoModified';
 
+    const PUSH_TYPE_TRADE_REFUND_SUCCESS            = 'trade_TradeMemoModified';
+
     /**
      * @var array
      */
@@ -61,6 +63,7 @@ class Trade
         self::PUSH_TYPE_TRADE_SELLERSHIP        => '卖家发货',
         self::PUSH_TYPE_TRADE_BUYERPAY          => '买家付款',
         self::PUSH_TYPE_TRADE_MEMOMODIFIED      => '卖家修改交易备注',
+        self::PUSH_TYPE_TRADE_REFUND_SUCCESS    => '买家退货成功（终态）',
     ];
 
     /**
