@@ -20,6 +20,8 @@ namespace Youzan\SDK\Enums;
  */
 class Trade
 {
+
+    /** order status for trade **/
     const ORDER_STATUS_TRADE_NO_CREATE_PAY          = 'TRADE_NO_CREATE_PAY';
 
     const ORDER_STATUS_WAIT_BUYER_PAY               = 'WAIT_BUYER_PAY';
@@ -36,6 +38,14 @@ class Trade
 
     const ORDER_STATUS_TRADE_CLOSED                 = 'TRADE_CLOSED';
 
+    /** refund for trade **/
+    const PUSH_TYPE_TRADE_REFUND_SELLER_AGREE          = 'trade_refund_RefundSellerAgree';
+
+    const PUSH_TYPE_TRADE_REFUND_BUYER_CREATED         = 'trade_refund_BuyerCreated';
+
+    const PUSH_TYPE_TRADE_REFUND_SUCCESS               = 'trade_refund_RefundSuccess'; // 经测试确实为此，官方文档trade_TradeMemoModified有误
+
+    /** push for trade **/
     const PUSH_TYPE_TRADE_CREATE                    = 'trade_TradeCreate';
 
     const PUSH_TYPE_TEADE_CLOSE                     = 'trade_TradeClose';
@@ -46,11 +56,9 @@ class Trade
 
     const PUSH_TYPE_TRADE_SELLERSHIP                = 'trade_TradeSellerShip';
 
-    const PUSH_TYPE_TRADE_BUYERPAY                  = 'trade_TradeBuyerPay';
+    const PUSH_TYPE_TRADE_BUYERPAY                  = 'trade_TradePaid';
 
     const PUSH_TYPE_TRADE_MEMOMODIFIED              = 'trade_TradeMemoModified';
-
-    const PUSH_TYPE_TRADE_REFUND_SUCCESS            = 'trade_TradeMemoModified';
 
     /**
      * @var array
@@ -63,7 +71,6 @@ class Trade
         self::PUSH_TYPE_TRADE_SELLERSHIP        => '卖家发货',
         self::PUSH_TYPE_TRADE_BUYERPAY          => '买家付款',
         self::PUSH_TYPE_TRADE_MEMOMODIFIED      => '卖家修改交易备注',
-        self::PUSH_TYPE_TRADE_REFUND_SUCCESS    => '买家退货成功（终态）',
     ];
 
     /**
@@ -78,6 +85,12 @@ class Trade
         self::ORDER_STATUS_WAIT_BUYER_CONFIRM_GOODS     => '等待买家确认收货，即:卖家已发货',
         self::ORDER_STATUS_TRADE_BUYER_SIGNED           => '买家已签收',
         self::ORDER_STATUS_TRADE_CLOSED                 => '付款以后用户退款成功，交易自动关',
+    ];
+
+    public static $refundStatusMap = [
+        self::PUSH_TYPE_TRADE_REFUND_SELLER_AGREE              => '卖家同意退款（终态）',
+        self::PUSH_TYPE_TRADE_REFUND_BUYER_CREATED             => '买家发起退款',
+        self::PUSH_TYPE_TRADE_REFUND_SUCCESS                   => '买家退货成功（终态）',
     ];
 
 }
