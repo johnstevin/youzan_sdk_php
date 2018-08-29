@@ -38,6 +38,8 @@ class Trade
 
     const ORDER_STATUS_TRADE_CLOSED                 = 'TRADE_CLOSED';
 
+    const ORDER_STATUS_TRADE_PAID                   = 'TRADE_PAID';
+
     /** refund for trade **/
     const PUSH_TYPE_TRADE_REFUND_SELLER_AGREE          = 'trade_refund_RefundSellerAgree';
 
@@ -85,6 +87,7 @@ class Trade
         self::ORDER_STATUS_WAIT_BUYER_CONFIRM_GOODS     => '等待买家确认收货，即:卖家已发货',
         self::ORDER_STATUS_TRADE_BUYER_SIGNED           => '买家已签收',
         self::ORDER_STATUS_TRADE_CLOSED                 => '付款以后用户退款成功，交易自动关',
+        self::ORDER_STATUS_TRADE_PAID                   => '买家已支付',
     ];
 
     public static $refundStatusMap = [
