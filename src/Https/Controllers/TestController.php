@@ -22,11 +22,11 @@ class TestController extends Controller
     public function getToken ()
     {
         $youzan = new \Youzan\SDK\Youzan([
-            'client_id' => 'd4ef476f9cd6dcd3e6',
-            'client_secret' => 'c4ffdd2e26325b537a2336aaf675c5f5',
+            'client_id' => '',
+            'client_secret' => '',
             'type' => \Youzan\SDK\Youzan::PERSONAL, // 自用型应用
             'debug' => true, // 调试模式
-            'kdt_id' => '18160736', // 店铺ID
+            'kdt_id' => '', // 店铺ID
             'log' => [
                 'name' => 'youzan',
                 'file' => __DIR__.'/youzan.log',
@@ -43,11 +43,11 @@ class TestController extends Controller
 
     public function getToken1 ()
     {
-        $clientId = "d4ef476f9cd6dcd3e6";
-        $clientSecret = "c4ffdd2e26325b537a2336aaf675c5f5";
+        $clientId = "";
+        $clientSecret = "";
 
         $type = 'self';
-        $keys['kdt_id'] = '18160736';
+        $keys['kdt_id'] = '';
 
         $accessToken = (new \Youzan\SDK\Open\Token($clientId, $clientSecret))->getToken($type, $keys);
         var_dump($accessToken);
